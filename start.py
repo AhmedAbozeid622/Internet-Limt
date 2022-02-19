@@ -121,9 +121,9 @@ def changeSpeed(speed):
 # print(changeSpeed(speed))
 
 
-# file = open("file.txt", "a")
-# file.write(f"{str(datetime.datetime.now())} \n")
-# file.close()
+file = open("file.txt", "a")
+file.write(f"{str(datetime.datetime.now())} \n")
+file.close()
 # input()
 
 # عنترة ابن ابن شداد
