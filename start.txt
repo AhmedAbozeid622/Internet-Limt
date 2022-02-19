@@ -1,1 +1,8 @@
 A8:77:E5:06:5D:74	[192.168.0.255] Sharp TV WOL
+
+http://nouser:74235acf-6d4f-4fac-96f2-6c63c8cf0cc0@www.duckdns.org/v3/update?hostname=ahmedmohsin622
+
+*/10 * * * * root /usr/bin/wget -O - -q http://nouser:74235acf-6d4f-4fac-96f2-6c63c8cf0cc0@www.duckdns.org/v3/update?hostname=ahmedmohsin622 >/dev/null 2>&1
+
+
+http://ahmedmohsin622.duckdns.org:2000/
