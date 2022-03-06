@@ -3,6 +3,7 @@ import requests as r
 import json
 import xmltodict
 import time
+import sshtunnel
 from bs4 import BeautifulSoup
 
 times = 0
@@ -123,6 +124,7 @@ def countSpeed(data):
 
 # Send request to ddwrt to change speed
 def changeSpeed(ip,speed):
+
     url = f"http://admin:admin@{ip}/apply.cgi"
 
     headers = { 
@@ -174,9 +176,19 @@ def changeSpeed(ip,speed):
     else:
         return "There is error in DDWRT"
 
-ip = "192.168.5.1"
-# DATA = 
+ip = "localhost:2000"
+
 speed = countSpeed(getData(url , headers))
+with sshtunnel.open_tunnel(
+    ("ahmedmohsin622.duckdns.org", 2000),
+    ssh_username="root",
+    ssh_password="admin",
+    remote_bind_address=("127.0.0.1", 80),
+    local_bind_address=('0.0.0.0', 2000)
+) as tunnel:
+    print(changeSpeed(ip, speed))
+
+print('FINISH!')
 # input()
 # print(speed)
 # print(changeSpeed(ip, speed))
