@@ -12,7 +12,7 @@ headers = {
     "Host": "mab.etisalat.com.eg:11003",
     "applicationPassword":"ZFZyqUpqeO9TMhXg4R/9qs0Igwg=",
     "applicationName":"MAB",
-    "Authorization":"Basic NTUzNjUwNjU0LDIxMDk0NDEwLUM4MDItNEJBMS1BQTdDLTIzOEEwRDMxOEUxRTo5em4haHZ3Xyt0LXNmLnUp"
+    "Authorization":"Basic nTUzNjUwNjU0LDIxMDk0NDEwLUM4MDItNEJBMS1BQTdDLTIzOEEwRDMxOEUxRTo5em4haHZ3Xyt0LXNmLnUp"
 }
 ########################
 
