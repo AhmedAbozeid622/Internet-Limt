@@ -1,4 +1,3 @@
-import requests as r
 import sshtunnel
 
 with sshtunnel.open_tunnel(
