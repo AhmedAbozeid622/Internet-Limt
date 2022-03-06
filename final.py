@@ -120,6 +120,9 @@ def countSpeed(data):
 
     speed = round(total_remainingValue / remainingDays /  hours_per_day * convertValue)
     print(speed)
+    print("total_remainingValue / remainingDays /  hours_per_day * convertValue = " , speed)
+    print("ratePlanConsumption_remainingValue = " , ratePlanConsumption_remainingValue)
+    print("ratePlanAddOnConsumption_remainingValue = " , ratePlanAddOnConsumption_remainingValue)
     return speed
 
 # Send request to ddwrt to change speed
