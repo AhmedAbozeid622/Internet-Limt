@@ -10,9 +10,9 @@ times = 0
 url = "https://mab.etisalat.com.eg:11003/Saytar/rest/servicemanagement/getGenericConsumptions?requestParam=%3C?xml%20version=%221.0%22?%3E%3CdialAndLanguageRequest%3E%3CsubscriberNumber%3E553650654%3C/subscriberNumber%3E%3Clanguage%3E1%3C/language%3E%3C/dialAndLanguageRequest%3E"
 headers = {
     "Host": "mab.etisalat.com.eg:11003",
-    "applicationPassword":"ZFZyqUpqeO9TMhXg4R/9qs0Igwg=",
+    "applicationPassword":"zFZyqUpqeO9TMhXg4R/9qs0Igwg=",
     "applicationName":"MAB",
-    "Authorization":"Basic nTUzNjUwNjU0LDIxMDk0NDEwLUM4MDItNEJBMS1BQTdDLTIzOEEwRDMxOEUxRTo5em4haHZ3Xyt0LXNmLnUp"
+    "Authorization":"Basic NTUzNjUwNjU0LDIxMDk0NDEwLUM4MDItNEJBMS1BQTdDLTIzOEEwRDMxOEUxRTo5em4haHZ3Xyt0LXNmLnUp"
 }
 ########################
 
