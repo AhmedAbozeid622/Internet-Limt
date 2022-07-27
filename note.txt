@@ -1,0 +1,4 @@
+10 0 * * * [our cronjob]  at 2022-07-01 00:10:00
+
+# get paymet info
+https://mab.etisalat.com.eg:11003/Saytar/rest/customerprofile/openAmount?getOpenAmountRequest=%3CgetOpenAmountRequest%3E%3Clanguage%3E2%3C%2Flanguage%3E%3CgetListOfBills%3Etrue%3C%2FgetListOfBills%3E%3CaccountNumber%3E1.130265133%3C%2FaccountNumber%3E%3C%2FgetOpenAmountRequest%3E

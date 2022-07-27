@@ -1,0 +1,2 @@
+#!/bin/bash
+nohup /bin/python3 /home/ubuntu/Projects/etisalatApi/serve.py > /home/ubuntu/Projects/etisalatApi/logging/server/server.out 2>&1 & echo $! > /home/ubuntu/Projects/etisalatApi/logging/server/pid
