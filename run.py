@@ -1,5 +1,5 @@
 import requests as r
-from router.RouterApi import Router
+from router.TPLINK_RouterApi import Router
 import time
 from datetime import datetime
 import configparser
