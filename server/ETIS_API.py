@@ -66,6 +66,24 @@ class ETIS_API:
         self.log(output['type'] , output)
         return output
 
+    @staticmethod
+    def detect_200_Errors(response):
+        response_dict = xmltodict.parse(response.text)
+        response_json__Str = json.dumps(response_dict , indent=2)
+        response_json = json.loads(response_json__Str)
+        
+        # errorCode
+        if 'getConsumptionResponse' in response_json.keys():
+            if 'fault' in response_json['getConsumptionResponse'].keys():
+                return True
+        
+        elif 'getOpenAmountResponse' in response_json.keys():
+            if 'fault' in response_json['getOpenAmountResponse'].keys():
+                return True
+        else:
+            return False
+        
+
     def getGenericConsumptions(self):
         try:
             GenericConsumptions_req = req.get(url=self.url + f"/Saytar/rest/servicemanagement/getGenericConsumptions?requestParam={EtisalatApi_config_file['Auth']['GenericConsumptions_requestParam']}" , headers=self.headers)
@@ -75,10 +93,11 @@ class ETIS_API:
             # print(GenericConsumptions_req.text)
             match GenericConsumptions_req.status_code:
                 case 200:
-                    if(content_Type == 'text/xml'):
+                    if(content_Type == 'text/xml') and (self.detect_200_Errors(GenericConsumptions_req) != True):
                         GenericConsumptions_dict = xmltodict.parse(GenericConsumptions_req.text)
                         GenericConsumptions_json__Str = json.dumps(GenericConsumptions_dict , indent=2)
                         GenericConsumptions_json = json.loads(GenericConsumptions_json__Str)
+
                         out = {
                             "status-code": GenericConsumptions_req.status_code,
                             "status-code-info": EtisalatApi_config_file['HttpCodes']['200'],
@@ -116,7 +135,7 @@ class ETIS_API:
             # print(GenericConsumptions_req.text)
             match getOpenAmount_req.status_code:
                 case 200:
-                    if(content_Type == 'text/xml'):
+                    if(content_Type == 'text/xml') and (self.detect_200_Errors(getOpenAmount_req) != True):
                         GenericConsumptions_dict = xmltodict.parse(getOpenAmount_req.text)
                         GenericConsumptions_json__Str = json.dumps(GenericConsumptions_dict , indent=2)
                         GenericConsumptions_json = json.loads(GenericConsumptions_json__Str)
